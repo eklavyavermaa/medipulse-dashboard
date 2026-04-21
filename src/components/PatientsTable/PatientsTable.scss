@@ -1,0 +1,147 @@
+@import '../../styles/variables';
+@import '../../styles/mixins';
+
+.patients-table-card {
+  @include card(20px);
+  @include fadeUp(0.25s);
+
+  .chart-title { font-size: 14px; font-weight: 700; }
+  .chart-sub   { font-size: 11px; color: $muted; margin-top: 2px; }
+}
+
+.table-header {
+  @include flex-between;
+  margin-bottom: 14px;
+}
+
+.view-all-btn {
+  font-size: 12px;
+  color: $accent;
+  font-weight: 600;
+  cursor: pointer;
+  background: none;
+  border: none;
+  font-family: $font;
+  transition: opacity 0.2s;
+  &:hover { opacity: 0.7; }
+}
+
+// ── Filter Tabs ───────────────────────────────────────────────────
+.filter-tabs {
+  display: flex;
+  gap: 4px;
+  margin-bottom: 14px;
+  flex-wrap: wrap;
+}
+
+.ftab {
+  font-size: 11px;
+  padding: 4px 10px;
+  border-radius: 7px;
+  border: 1px solid transparent;
+  color: $muted;
+  background: none;
+  font-family: $font;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+
+  &:hover:not(.active) { color: $muted2; background: rgba(255,255,255,0.03); }
+  &.active {
+    background: rgba(0,200,160,0.12);
+    color: $accent;
+    border-color: rgba(0,200,160,0.2);
+  }
+}
+
+// ── Table ─────────────────────────────────────────────────────────
+.table-wrap {
+  overflow-x: auto;
+  @include scrollbar;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+thead th {
+  font-size: 11px;
+  color: $muted;
+  font-weight: 600;
+  text-align: left;
+  padding: 0 10px 10px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  border-bottom: 1px solid $border;
+  white-space: nowrap;
+}
+
+tbody tr {
+  transition: background 0.15s;
+  &:hover td { background: rgba(255,255,255,0.02); }
+  &:last-child td { border-bottom: none; }
+}
+
+tbody td {
+  padding: 11px 10px;
+  font-size: 13px;
+  border-bottom: 1px solid rgba(30,45,69,0.5);
+  vertical-align: middle;
+}
+
+.pt-name {
+  font-weight: 600;
+  font-size: 13px;
+}
+
+.pt-id {
+  font-size: 11px;
+  color: $muted;
+  font-family: $mono;
+  margin-top: 1px;
+}
+
+.dept-tag {
+  font-size: 11px;
+  color: $muted2;
+  background: rgba(255,255,255,0.04);
+  padding: 3px 8px;
+  border-radius: 5px;
+  white-space: nowrap;
+}
+
+.doctor-col {
+  font-size: 12px;
+  color: $muted2;
+  white-space: nowrap;
+}
+
+.time-col {
+  font-size: 11px;
+  color: $muted;
+  font-family: $mono;
+  white-space: nowrap;
+}
+
+.empty-row {
+  text-align: center;
+  color: $muted;
+  padding: 24px 0 !important;
+  font-size: 13px;
+}
+
+// ── Status Pills ──────────────────────────────────────────────────
+.status-pill {
+  font-size: 11px;
+  font-weight: 600;
+  padding: 3px 9px;
+  border-radius: 20px;
+  display: inline-block;
+  white-space: nowrap;
+
+  &.pill--critical   { background: rgba(239,68,68,0.15);  color: #F87171; }
+  &.pill--admitted   { background: rgba(59,130,246,0.15); color: #60A5FA; }
+  &.pill--obs        { background: rgba(245,158,11,0.12); color: #FCD34D; }
+  &.pill--discharged { background: rgba(0,200,160,0.12);  color: #00C8A0; }
+}

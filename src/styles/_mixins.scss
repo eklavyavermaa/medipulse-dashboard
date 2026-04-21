@@ -1,0 +1,70 @@
+@import 'variables';
+
+// ─── Responsive ──────────────────────────────────────────────────
+@mixin sm { @media (max-width: #{$bp-sm}) { @content; } }
+@mixin md { @media (max-width: #{$bp-md}) { @content; } }
+@mixin lg { @media (max-width: #{$bp-lg}) { @content; } }
+@mixin xl { @media (max-width: #{$bp-xl}) { @content; } }
+
+// ─── Card ────────────────────────────────────────────────────────
+@mixin card($pad: 20px) {
+  background: $card;
+  border: 1px solid $border;
+  border-radius: $radius-lg;
+  padding: $pad;
+}
+
+// ─── Flex Center ─────────────────────────────────────────────────
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+// ─── Flex Between ────────────────────────────────────────────────
+@mixin flex-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+// ─── Truncate ────────────────────────────────────────────────────
+@mixin truncate {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+// ─── Fade Up Animation ───────────────────────────────────────────
+@mixin fadeUp($delay: 0s, $dur: 0.5s) {
+  animation: fadeUp $dur ease both;
+  animation-delay: $delay;
+}
+
+// ─── Icon Box ────────────────────────────────────────────────────
+@mixin icon-box($size: 36px, $bg: rgba(255,255,255,0.05)) {
+  width: $size;
+  height: $size;
+  border-radius: $radius-sm;
+  background: $bg;
+  @include flex-center;
+  flex-shrink: 0;
+}
+
+// ─── Status Pill ─────────────────────────────────────────────────
+@mixin pill($bg, $color) {
+  background: $bg;
+  color: $color;
+  font-size: 11px;
+  font-weight: 600;
+  padding: 3px 9px;
+  border-radius: 20px;
+  display: inline-block;
+}
+
+// ─── Scrollbar ───────────────────────────────────────────────────
+@mixin scrollbar {
+  &::-webkit-scrollbar { width: 4px; }
+  &::-webkit-scrollbar-track { background: transparent; }
+  &::-webkit-scrollbar-thumb { background: $border2; border-radius: 10px; }
+}

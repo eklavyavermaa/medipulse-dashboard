@@ -1,0 +1,39 @@
+@import '../../styles/variables';
+@import '../../styles/mixins';
+
+.dashboard {
+  padding: 24px 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+  @include md { padding: 16px; }
+
+  // ── Metrics Grid ───────────────────────────────────────────────
+  &__metrics {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+
+    @include xl  { grid-template-columns: repeat(2, 1fr); }
+    @include sm  { grid-template-columns: 1fr; }
+  }
+
+  // ── Charts Row ─────────────────────────────────────────────────
+  &__charts {
+    display: grid;
+    grid-template-columns: 1.6fr 1fr;
+    gap: 16px;
+
+    @include lg  { grid-template-columns: 1fr; }
+  }
+
+  // ── Bottom Row ─────────────────────────────────────────────────
+  &__bottom {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 16px;
+
+    @include lg  { grid-template-columns: 1fr; }
+  }
+}

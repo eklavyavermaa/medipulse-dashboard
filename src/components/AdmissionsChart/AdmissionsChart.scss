@@ -1,0 +1,51 @@
+@import '../../styles/variables';
+@import '../../styles/mixins';
+
+.admissions-chart {
+  @include card(20px);
+  @include fadeUp(0.1s);
+
+  .chart-header {
+    @include flex-between;
+    align-items: flex-start;
+    margin-bottom: 18px;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+
+  .chart-title {
+    font-size: 14px;
+    font-weight: 700;
+  }
+
+  .chart-sub {
+    font-size: 11px;
+    color: $muted;
+    margin-top: 2px;
+  }
+
+  .chart-tabs {
+    display: flex;
+    gap: 4px;
+  }
+
+  .ctab {
+    font-size: 11px;
+    padding: 5px 11px;
+    border-radius: 7px;
+    border: 1px solid transparent;
+    color: $muted;
+    transition: all 0.2s;
+    font-weight: 500;
+    cursor: pointer;
+    background: none;
+
+    &:hover:not(.active) { color: $muted2; background: rgba(255,255,255,0.03); }
+
+    &.active {
+      background: rgba(0, 200, 160, 0.12);
+      color: $accent;
+      border-color: rgba(0, 200, 160, 0.2);
+    }
+  }
+}

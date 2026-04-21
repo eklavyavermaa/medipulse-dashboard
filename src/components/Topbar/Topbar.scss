@@ -1,0 +1,140 @@
+@import '../../styles/variables';
+@import '../../styles/mixins';
+
+.topbar {
+  @include flex-between;
+  gap: 16px;
+  padding: 16px 28px;
+  border-bottom: 1px solid $border;
+  background: $bg;
+  position: sticky;
+  top: 0;
+  z-index: 50;
+
+  @include md { padding: 14px 16px; }
+
+  &__left {
+    min-width: 0;
+  }
+
+  &__title {
+    font-size: 20px;
+    font-weight: 800;
+    letter-spacing: -0.4px;
+    @include truncate;
+
+    @include md { font-size: 17px; }
+  }
+
+  &__sub {
+    font-size: 12px;
+    color: $muted;
+    margin-top: 2px;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+  }
+
+  &__right {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-shrink: 0;
+  }
+}
+
+// ── Live Dot ─────────────────────────────────────────────────────
+.live-dot {
+  display: inline-block;
+  width: 7px;
+  height: 7px;
+  background: $accent;
+  border-radius: 50%;
+  animation: pulse 1.5s infinite;
+}
+
+// ── Search ───────────────────────────────────────────────────────
+.search-box {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: $card;
+  border: 1px solid $border;
+  border-radius: 10px;
+  padding: 8px 14px;
+  width: 220px;
+  transition: border-color 0.2s;
+
+  &:focus-within {
+    border-color: rgba(0, 200, 160, 0.4);
+  }
+
+  @include lg { width: 160px; }
+  @include md { display: none; }
+
+  .search-icon {
+    width: 14px;
+    height: 14px;
+    color: $muted;
+    flex-shrink: 0;
+  }
+
+  input {
+    background: none;
+    border: none;
+    outline: none;
+    font-size: 13px;
+    color: $text;
+    width: 100%;
+
+    &::placeholder { color: $muted; }
+  }
+}
+
+// ── Date Badge ───────────────────────────────────────────────────
+.date-badge {
+  font-size: 12px;
+  color: $muted;
+  background: $card;
+  border: 1px solid $border;
+  padding: 7px 14px;
+  border-radius: 10px;
+  font-family: $mono;
+  white-space: nowrap;
+
+  @include lg { display: none; }
+}
+
+// ── Icon Button ──────────────────────────────────────────────────
+.icon-btn {
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  background: $card;
+  border: 1px solid $border;
+  @include flex-center;
+  transition: all 0.2s;
+  position: relative;
+
+  &:hover {
+    border-color: $accent;
+    background: rgba(0, 200, 160, 0.08);
+  }
+
+  svg {
+    width: 16px;
+    height: 16px;
+    color: $muted2;
+  }
+}
+
+.notif-dot {
+  width: 7px;
+  height: 7px;
+  background: $accent4;
+  border-radius: 50%;
+  position: absolute;
+  top: 6px;
+  right: 6px;
+  border: 1.5px solid $bg;
+}
