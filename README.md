@@ -111,9 +111,9 @@ Creates an optimized `/build` folder ready to deploy.
 
 ---
 
-## Deploy to Vercel (Free — 5 minutes)
+## Deployed to Vercel  
 
-1. Push your code to GitHub
+1. Push code to GitHub
    ```bash
    git init
    git add .
