@@ -128,10 +128,8 @@ Creates an optimized `/build` folder ready to deploy.
 
 4. Leave all settings as default → Click **"Deploy"**
 
-5. Your live URL is ready in ~60 seconds:
-   ```
-   https://medipulse-YOUR_USERNAME.vercel.app
-   ```
+5. Live URL -- https://medipulse-dashboard.vercel.app/
+ 
 
 The `vercel.json` file is already included — it handles React Router client-side routing automatically.
 
